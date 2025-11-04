@@ -82,7 +82,7 @@ async function processarComando() {
 
     switch (httpMethod) {
         case 'GET':
-            if(resource.include('/')){
+            if(resource.includes('/')){
                 const [, id] = resource.split('/');
                 await tomarProductoPorID(id);
             } else if (resource === 'products'){
@@ -108,7 +108,7 @@ async function processarComando() {
 
             break;
         case 'DELETE':
-            if(resource.include('/')){
+            if(resource.includes('/')){
                 const [, id] = resource.split('/');
                 await eliminarProducto(id);
             } else {
